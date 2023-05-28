@@ -1,3 +1,4 @@
+import "./ExpenseDate.css";
 
 function ExpenseDate(props) {
    const expenses = props?.expenses;
@@ -7,9 +8,11 @@ function ExpenseDate(props) {
 
    return (
       <>
-         <div>{day}</div>
-         <div>{month}</div>
-         <div>{year}</div>
+         <div className="expense-date">
+            <div className="expense-date__month">{day}</div>
+            <div className="expense-date__year">{month}</div>
+            <div className="expense-date__day">{year}</div>
+         </div>
       </>
    );
 
