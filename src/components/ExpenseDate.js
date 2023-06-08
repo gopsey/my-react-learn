@@ -1,10 +1,17 @@
 import "./ExpenseDate.css";
+import { useState } from "react";
 
-function ExpenseDate(props) {
+const ExpenseDate = (props) => {
    const expenses = props?.expenses;
    const day = expenses?.expenseDate?.toLocaleString('en-US', { day: '2-digit' });
    const month = expenses?.expenseDate?.toLocaleString('en-US', { month: 'long' });
    const year = expenses?.expenseDate?.getFullYear();
+   const [title, setTitle] = useState(expenses.expenseTitle)
+
+   const buttonClickHandler = () => {
+      setTitle('Updated!');
+      alert('Button clicked!!!!!!');
+   }
 
    return (
       <>
@@ -12,6 +19,8 @@ function ExpenseDate(props) {
             <div className="expense-date__month">{day}</div>
             <div className="expense-date__year">{month}</div>
             <div className="expense-date__day">{year}</div>
+            <div className="">{title}</div>
+            <button onClick={buttonClickHandler}>Click me</button>
          </div>
       </>
    );
