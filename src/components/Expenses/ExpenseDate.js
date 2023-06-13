@@ -10,7 +10,6 @@ const ExpenseDate = (props) => {
 
    const buttonClickHandler = () => {
       setTitle('Updated!');
-      alert('Button clicked!!!!!!');
    }
 
    return (
