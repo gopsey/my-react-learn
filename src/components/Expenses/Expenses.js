@@ -5,6 +5,7 @@ import Card from "../UI/Card";
 import { useState } from "react";
 
 const Expenses = ({expenses}) => {
+   console.log(expenses, 'from Expenses')
    const [filteredYear, setFilteredYear] = useState('2020');
    const onExpenseFilterChange = (expenseFilterChangedValue) => {
       setFilteredYear(expenseFilterChangedValue);
