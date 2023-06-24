@@ -13,7 +13,8 @@ const Expenses = ({ expenses }) => {
    }
    // Filtering expenses based on Filtered Input Value from Child
    const filteredExpenses = expenses.filter((expense) => {
-      const expenseDateString = String(expense.expenseDate.getFullYear());
+      const expenseDate = new Date(expense?.expenseDate);
+      const expenseDateString = String(expenseDate.getFullYear());
       const inputDateString = String(filteredYear);
       return filteredYear === '' ? expense : expenseDateString === inputDateString;
    })
